@@ -3,10 +3,51 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ui="http://schemas.inkore.net/lib/ui/wpf/modern"
         xmlns:local="clr-namespace:HVKLv2"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        ui:ThemeManager.IsThemeAware="True"
+        ui:WindowHelper.SystemBackdropType="Mica"
+        ui:WindowHelper.UseModernWindowStyle="True"
 
+        mc:Ignorable="d"
+        Title="Hello! Vacko Launcher V2" Height="450" Width="800" MinWidth="800" MinHeight="450">
+    <Grid>
+        <ui:NavigationView x:Name="Nav_Root" IsPaneOpen="False">
+            <ui:NavigationView.MenuItems>
+                <ui:NavigationViewItem Content="Home" x:Name="NavigationViewItem_Home">
+                    <ui:NavigationViewItem.Icon>
+                        <ui:FontIcon Icon="{x:Static ui:SegoeFluentIcons.Home}" Height="16" VerticalAlignment="Bottom"/>
+                    </ui:NavigationViewItem.Icon>
+                </ui:NavigationViewItem>
+
+                <ui:NavigationViewItem Content="Apps">
+                    <ui:NavigationViewItem.Icon>
+                        <ui:FontIcon Icon="{x:Static ui:SegoeFluentIcons.OEM}"/>
+                    </ui:NavigationViewItem.Icon>
+                </ui:NavigationViewItem>
+
+                <ui:NavigationViewItem Content="Games">
+                    <ui:NavigationViewItem.Icon>
+                        <ui:FontIcon Icon="{x:Static ui:SegoeFluentIcons.Game}"/>
+                    </ui:NavigationViewItem.Icon>
+                </ui:NavigationViewItem>
+
+            </ui:NavigationView.MenuItems>
+
+            <ui:NavigationView.FooterMenuItems>
+
+                <ui:NavigationViewItem Content="Settings">
+                    <ui:NavigationViewItem.Icon>
+                        <ui:FontIcon Icon="{x:Static ui:SegoeFluentIcons.Settings}"/>
+                    </ui:NavigationViewItem.Icon>
+                </ui:NavigationViewItem>
+                <ui:NavigationViewItem Content="About">
+                    <ui:NavigationViewItem.Icon>
+                        <ui:FontIcon Icon="{x:Static ui:SegoeFluentIcons.Info}"/>
+                    </ui:NavigationViewItem.Icon>
+                </ui:NavigationViewItem>
+            </ui:NavigationView.FooterMenuItems>
+            <Frame x:Name="Frame_Main" />
+        </ui:NavigationView>
     </Grid>
 </Window>
